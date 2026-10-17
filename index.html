@@ -5,57 +5,222 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
-  <title>Your Name | Academic CV</title>
+  <meta name="description"
+        content="Academic homepage and research portfolio">
+  <title>Your Name | Academic Website</title>
   <style>
+    :root {
+      --ink: #202c3b;
+      --muted: #64748b;
+      --accent: #244d7d;
+      --line: #e2e8f0;
+      --light: #f7f9fc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 780px;
-      margin: 60px auto;
-      padding: 0 24px;
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
       line-height: 1.7;
-      color: #252525;
+      color: var(--ink);
+      background: white;
     }
-    h1 { margin-bottom: 0; }
+    a { color: var(--accent); }
+    nav {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 40px 24px 80px;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      padding: 25px 0 45px;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--light);
+    }
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
     h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
-      margin-top: 36px;
+      font-size: 23px;
+      margin: 46px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
     }
-    a { color: #235c94; }
+    h3 { margin: 0 0 8px; }
+    p { margin-top: 6px; }
+    .muted { color: var(--muted); }
+    .links a { margin-right: 14px; }
+    .project {
+      background: var(--light);
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin: 16px 0;
+    }
+    .pub {
+      margin-bottom: 18px;
+      padding-left: 16px;
+      border-left: 3px solid var(--line);
+    }
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .avatar {
+        width: 130px;
+        height: 130px;
+      }
+      h1 { font-size: 30px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p>Researcher | University of Helsinki</p>
-  <p>Helsinki, Finland</p>
 
-  <h2>About Me</h2>
-  <p>
-    I am a researcher interested in
-    [your research field].
-  </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <h2>Research Interests</h2>
-  <p>Topic A · Topic B · Topic C</p>
+  <main>
+    <header class="hero">
+      <img class="avatar"
+           src="assets/profile.jpg"
+           alt="Portrait of Your Name">
+      <div>
+        <h1>Your Name</h1>
+        <p>Researcher</p>
+        <p class="muted">
+          University of Helsinki, Finland
+        </p>
+        <div class="links">
+          <a href="https://orcid.org/">ORCID</a>
+          <a href="https://scholar.google.com/">
+            Google Scholar
+          </a>
+          <a href="https://researchportal.helsinki.fi/">
+            Tuhat
+          </a>
+        </div>
+      </div>
+    </header>
 
-  <h2>Education</h2>
-  <p>PhD in [Discipline], [University]</p>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a researcher at the University
+        of Helsinki. My research focuses on
+        [Research Field], particularly
+        [Topic A] and [Topic B].
+      </p>
+    </section>
 
-  <h2>Publications</h2>
-  <p>
-    Author (2026). Publication title.
-    Journal name.
-  </p>
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Research Area One</li>
+        <li>Research Area Two</li>
+        <li>Research Area Three</li>
+      </ul>
+    </section>
 
-  <h2>Academic CV</h2>
-  <p><a href="cv.pdf">Download my CV (PDF)</a></p>
+    <section id="projects">
+      <h2>Research Projects</h2>
 
-  <h2>Links</h2>
-  <p>
-    <a href="https://orcid.org/">ORCID</a> |
-    <a href="https://researchportal.helsinki.fi/">
-      University Profile
-    </a>
-  </p>
+      <div class="project">
+        <h3>Project One</h3>
+        <p class="muted">2025 – Present</p>
+        <p>
+          Describe your research question,
+          methodology and contributions.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Project Two</h3>
+        <p class="muted">2023 – 2025</p>
+        <p>
+          Describe another research project
+          and its academic significance.
+        </p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <strong>Paper Title One</strong><br>
+        Author A., Author B. (2026).<br>
+        <em>Journal Name</em>.
+      </div>
+
+      <div class="pub">
+        <strong>Paper Title Two</strong><br>
+        Author A., Author C. (2025).<br>
+        <em>Journal Name</em>.
+      </div>
+    </section>
+
+    <section id="cv">
+      <h2>Academic CV</h2>
+      <p>
+        Academic background, research and
+        teaching experience, and publications.
+      </p>
+      <p>
+        Full CV available upon request.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        University of Helsinki<br>
+        Helsinki, Finland<br>
+        Email:
+        <a href="mailto:your.email@example.com">
+          your.email@example.com
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Your Name · Academic Website
+  </footer>
+
 </body>
 </html>
