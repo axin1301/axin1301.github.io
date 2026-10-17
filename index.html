@@ -332,9 +332,9 @@ h3 {
   padding-left: 5px;
 }
 
-/* Research project cards */
+/* Research  cards */
 
-.project {
+. {
   background: var(--light);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -342,21 +342,21 @@ h3 {
   margin: 22px 0;
 }
 
-.project h3 {
+. h3 {
   font-size: 20px;
   margin-bottom: 15px;
 }
 
-.project ul {
+. ul {
   padding-left: 22px;
 }
 
-.project li {
+. li {
   margin-bottom: 12px;
   overflow-wrap: anywhere;
 }
 
-.project > p:first-child {
+. > p:first-child {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.7px;
@@ -441,7 +441,7 @@ footer {
     font-size: 22px;
   }
 
-  .project {
+  . {
     padding: 20px;
   }
 
@@ -456,6 +456,134 @@ footer {
   }
 }
 
+/* ===== Research Portfolio ===== */
+
+.research-card {
+  padding: 30px;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--light);
+}
+
+.project-category {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.research-card h3 {
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.research-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 25px 0 12px;
+  color: var(--ink);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.project-tags span {
+  font-size: 12px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  background: #e8eef6;
+  color: #365578;
+}
+
+.project-papers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-papers li {
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.project-papers li:last-child {
+  border-bottom: none;
+}
+
+.project-papers a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-papers a:hover {
+  text-decoration: underline;
+}
+
+.paper-meta {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.status.accepted {
+  background: #e0f1e7;
+  color: #257044;
+}
+
+/* Collapsible submitted works */
+
+.submitted-works {
+  margin-top: 22px;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+}
+
+.submitted-works summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.submitted-works[open] summary {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 700px) {
+  .research-card {
+    padding: 20px;
+  }
+
+  .research-card h3 {
+    font-size: 19px;
+  }
+
+  .project-tags {
+    gap: 6px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -463,7 +591,7 @@ footer {
 <nav>
   <a href="#about">About</a>
   <a href="#research">Research</a>
-  <a href="#projects">Projects</a>
+  <a href="#s">Projects</a>
   <a href="#publications">Publications</a>
   <a href="#experience">Experience</a>
   <a href="#education">Education</a>
@@ -588,12 +716,17 @@ footer {
 
 
     
+
 <section id="projects">
   <h2>Research Projects</h2>
 
-  <!-- Theme 1: Multimodal Urban Intelligence -->
-  <div class="project">
-    <p class="muted">
+  <p class="muted">
+    Selected research directions and associated works.
+  </p>
+
+  <!-- Theme 1 -->
+  <div class="project research-card">
+    <p class="project-category">
       01 / MULTIMODAL AI &amp; SPATIAL INTELLIGENCE
     </p>
 
@@ -603,41 +736,49 @@ footer {
     </h3>
 
     <p>
-  My research explores multimodal foundation
-  models for urban understanding, socioeconomic
-  estimation, and spatial reasoning.
-  I am particularly interested in evidence-aware
-  multimodal reasoning, multimodal in-context
-  learning, and agent-based approaches for
-  interpreting urban environments.
-
-  My work also investigates the reliability,
-  generalizability, and contextual consistency
-  of multimodal AI systems when analyzing
-  complex urban and geospatial information.
-</p>
-
-    <p class="muted">
-      Multimodal LLMs &middot;
-      Spatial Reasoning &middot;
-      Urban Intelligence
+      Exploring multimodal foundation models for
+      urban understanding, evidence-aware
+      socioeconomic inference, and spatial
+      reasoning, with a focus on reliable
+      and context-aware urban intelligence.
     </p>
 
-    <p><strong>Related Publications:</strong></p>
-    <ul>
+    <div class="project-tags">
+      <span>Multimodal LLMs</span>
+      <span>Spatial Reasoning</span>
+      <span>Urban Intelligence</span>
+    </div>
+
+    <h4>Selected Publications</h4>
+
+    <ul class="project-papers">
+      <li>
+        <strong>
+          Graph-of-Evidence: Verification-Aware
+          Graph Reasoning for Multimodal Urban
+          Socioeconomic Estimation
+        </strong>
+        <div class="paper-meta">
+          ACM MM 2026
+          <span class="status accepted">Accepted</span>
+        </div>
+      </li>
+
       <li>
         <a href="https://arxiv.org/abs/2606.15890"
            target="_blank" rel="noopener noreferrer">
-          UrbanWell: Benchmarking Multimodal
-          Large Language Models for
-          Spatio-Temporal Urban Wellbeing Analytics
+          UrbanWell: Benchmarking Multimodal Large
+          Language Models for Spatio-Temporal
+          Urban Wellbeing Analytics
         </a>
-        <span class="muted">(KDD 2026)</span>
-        &middot;
-        <a href="https://github.com/axin1301/UrbanWell-Benchmark"
-           target="_blank" rel="noopener noreferrer">
-          Code
-        </a>
+        <div class="paper-meta">
+          KDD 2026
+          &middot;
+          <a href="https://github.com/axin1301/UrbanWell-Benchmark"
+             target="_blank" rel="noopener noreferrer">
+            Code
+          </a>
+        </div>
       </li>
 
       <li>
@@ -646,7 +787,7 @@ footer {
           UrbanLLaVA: A Multi-modal Large
           Language Model for Urban Intelligence
         </a>
-        <span class="muted">(ICCV 2025)</span>
+        <div class="paper-meta">ICCV 2025</div>
       </li>
 
       <li>
@@ -656,57 +797,43 @@ footer {
           Reasoning-to-Action Capabilities
           of VLM Agents in 3D Scenes
         </a>
-        <span class="muted">(arXiv 2026)</span>
+        <div class="paper-meta">
+          arXiv 2026 · Preprint
+        </div>
       </li>
     </ul>
-    <ul>
-  <li>
-    <strong>
-      Graph-of-Evidence: Verification-Aware Graph
-      Reasoning for Multimodal Urban
-      Socioeconomic Estimation
-    </strong>
-    <br>
-    <span class="muted">
-      ACM Multimedia (ACM MM 2026) — Accepted
-    </span>
-  </li>
-</ul>
 
-<!-- Submitted Works -->
-<p><strong>Submitted Works:</strong></p>
+    <details class="submitted-works">
+      <summary>Submitted Works (3)</summary>
+      <ul class="project-papers">
+        <li>
+          Same Place, Different Stories:
+          How Multimodal AI Constructs Divergent
+          Narratives of Urban Space
+          <div class="paper-meta">Submitted</div>
+        </li>
 
-<ul>
-  <li>
-    Same Place, Different Stories:
-    How Multimodal AI Constructs Divergent
-    Narratives of Urban Space
-    <br>
-    <span class="muted">Submitted</span>
-  </li>
+        <li>
+          Urban Multimodal In-Context Learning:
+          Multi-Granular Retrieval and Contextual
+          Reasoning for Urban Indicator Prediction
+          <div class="paper-meta">Submitted</div>
+        </li>
 
-  <li>
-    Urban Multimodal In-Context Learning:
-    Multi-Granular Retrieval and Contextual
-    Reasoning for Urban Indicator Prediction
-    <br>
-    <span class="muted">Submitted</span>
-  </li>
-
-  <li>
-    Evidence-Constrained Zero-Shot
-    Socioeconomic Inference from Urban
-    Visual Data via Multimodal Agents
-    <br>
-    <span class="muted">Submitted</span>
-  </li>
-</ul>
+        <li>
+          Evidence-Constrained Zero-Shot
+          Socioeconomic Inference from Urban
+          Visual Data via Multimodal Agents
+          <div class="paper-meta">Submitted</div>
+        </li>
+      </ul>
+    </details>
   </div>
 
 
-  <!-- Theme 2: Geospatial Infrastructure -->
-  <div class="project">
-    <p class="muted">
+  <!-- Theme 2 -->
+  <div class="project research-card">
+    <p class="project-category">
       02 / GEOSPATIAL MODELING
     </p>
 
@@ -716,25 +843,31 @@ footer {
     </h3>
 
     <p>
-      This research investigates how satellite
-      imagery and geospatial data can be used
-      to reconstruct, analyze, and model urban
-      infrastructure and mobility patterns.
-      It encompasses road network extraction
-      and commuting flow generation, with
-      applications in urban accessibility,
-      socioeconomic development, and
-      spatial dynamics.
+      Investigating AI-driven reconstruction
+      and modeling of urban infrastructure
+      and mobility patterns from satellite
+      imagery and geospatial data.
     </p>
 
-    <p class="muted">
-      Remote Sensing &middot;
-      Road Networks &middot;
-      Urban Mobility
-    </p>
+    <div class="project-tags">
+      <span>Remote Sensing</span>
+      <span>Road Networks</span>
+      <span>Urban Mobility</span>
+    </div>
 
-    <p><strong>Related Publications:</strong></p>
-    <ul>
+    <h4>Selected Publications</h4>
+
+    <ul class="project-papers">
+      <li>
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/96e774df6d1e39dfd847af0274706f6b-Abstract-Datasets_and_Benchmarks_Track.html"
+           target="_blank" rel="noopener noreferrer">
+          Satellites Reveal Mobility:
+          A Commuting Origin-destination Flow
+          Generator for Global Cities
+        </a>
+        <div class="paper-meta">NeurIPS 2025</div>
+      </li>
+
       <li>
         <a href="https://www.ijcai.org/proceedings/2024/831"
            target="_blank" rel="noopener noreferrer">
@@ -743,30 +876,34 @@ footer {
           Imagery for Socioeconomic Insights
           in Impoverished Areas
         </a>
-        <span class="muted">(IJCAI 2024)</span>
-        &middot;
-        <a href="https://github.com/tsinghua-fib-lab/Road_network_extraction_impoverished_counties"
-           target="_blank" rel="noopener noreferrer">
-          Code
-        </a>
+        <div class="paper-meta">
+          IJCAI 2024
+          &middot;
+          <a href="https://github.com/tsinghua-fib-lab/Road_network_extraction_impoverished_counties"
+             target="_blank" rel="noopener noreferrer">
+            Code
+          </a>
+        </div>
       </li>
 
       <li>
-        <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/96e774df6d1e39dfd847af0274706f6b-Abstract-Datasets_and_Benchmarks_Track.html"
+        <a href="https://dblp.org/rec/conf/gis/HanZXLX024"
            target="_blank" rel="noopener noreferrer">
-          Satellites Reveal Mobility:
-          A Commuting Origin-destination Flow
-          Generator for Global Cities
+          GUI: A Comprehensive Dataset of Global
+          Urban Infrastructure Based on Geospatial
+          Visual Foundation Models
         </a>
-        <span class="muted">(NeurIPS 2025)</span>
+        <div class="paper-meta">
+          ACM SIGSPATIAL 2024
+        </div>
       </li>
     </ul>
   </div>
 
 
-  <!-- Theme 3: Urban Representation Learning -->
-  <div class="project">
-    <p class="muted">
+  <!-- Theme 3 -->
+  <div class="project research-card">
+    <p class="project-category">
       03 / URBAN REPRESENTATION LEARNING
     </p>
 
@@ -776,33 +913,37 @@ footer {
     </h3>
 
     <p>
-      This research explores how satellite
-      imagery, urban geographic information,
-      and machine learning can be used to learn
-      meaningful urban representations and
-      understand socioeconomic characteristics.
-      It investigates representation learning,
-      socioeconomic prediction, and large-scale
-      geospatial datasets for urban analytics
-      and sustainable development.
+      Developing urban representations from
+      satellite imagery and geospatial data
+      for socioeconomic prediction,
+      urban analytics, and sustainable
+      development research.
     </p>
 
-    <p class="muted">
-      Representation Learning &middot;
-      Urban Analytics &middot;
-      Sustainable Development
-    </p>
+    <div class="project-tags">
+      <span>Representation Learning</span>
+      <span>Urban Analytics</span>
+      <span>Socioeconomic Prediction</span>
+    </div>
 
-    <p><strong>Related Publications:</strong></p>
-    <ul>
+    <h4>Selected Publications</h4>
+
+    <ul class="project-papers">
       <li>
-        <a href="https://doi.org/10.1145/3485447.3512149"
+        <a href="https://doi.org/10.1038/s41597-023-02576-3"
            target="_blank" rel="noopener noreferrer">
-          Beyond the First Law of Geography:
-          Learning Representations of Satellite
-          Imagery by Leveraging Point-of-Interests
+          A Satellite Imagery Dataset for
+          Long-Term Sustainable Development
+          in United States Cities
         </a>
-        <span class="muted">(WWW 2022)</span>
+        <div class="paper-meta">
+          Scientific Data 2023
+          &middot;
+          <a href="https://github.com/axin1301/Satellite-imagery-dataset"
+             target="_blank" rel="noopener noreferrer">
+            Code
+          </a>
+        </div>
       </li>
 
       <li>
@@ -811,36 +952,34 @@ footer {
           Predicting Multi-level Socioeconomic
           Indicators from Structural Urban Imagery
         </a>
-        <span class="muted">(CIKM 2022)</span>
+        <div class="paper-meta">CIKM 2022</div>
       </li>
 
       <li>
-        <a href="https://doi.org/10.1038/s41597-023-02576-3"
+        <a href="https://doi.org/10.1145/3485447.3512149"
            target="_blank" rel="noopener noreferrer">
-          A Satellite Imagery Dataset for
-          Long-Term Sustainable Development
-          in United States Cities
+          Beyond the First Law of Geography:
+          Learning Representations of Satellite
+          Imagery by Leveraging Point-of-Interests
         </a>
-        <span class="muted">(Scientific Data 2023)</span>
-        &middot;
-        <a href="https://github.com/axin1301/Satellite-imagery-dataset"
-           target="_blank" rel="noopener noreferrer">
-          Code
-        </a>
+        <div class="paper-meta">WWW 2022</div>
       </li>
     </ul>
-    <ul>
-  <li>
-    Generalizable Urban Opportunity
-    Prediction from Satellite Imagery
-    with Region–Task Mixture-of-Experts
-    <br>
-    <span class="muted">Submitted</span>
-  </li>
-</ul>
-  </div>
 
+    <details class="submitted-works">
+      <summary>Submitted Work (1)</summary>
+      <ul class="project-papers">
+        <li>
+          Generalizable Urban Opportunity
+          Prediction from Satellite Imagery
+          with Region–Task Mixture-of-Experts
+          <div class="paper-meta">Submitted</div>
+        </li>
+      </ul>
+    </details>
+  </div>
 </section>
+
 
 
 <section id="publications">
