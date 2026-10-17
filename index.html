@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1">
   <meta name="description"
         content="Academic homepage and research portfolio">
-  <title>Your Name | Academic Website</title>
+  <title>Yanxin Xi | Academic Website</title>
   <style>
     :root {
       --ink: #202c3b;
@@ -177,56 +177,339 @@
   }
 }
 
+/* ===== Academic Website Refinement ===== */
+
+:root {
+  --ink: #202d3d;
+  --muted: #64748b;
+  --accent: #24578a;
+  --line: #e4eaf1;
+  --light: #f7f9fc;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #153d65;
+}
+
+/* Navigation */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 24px;
+  gap: 25px;
+}
+
+nav a {
+  color: #405267;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Main layout */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 30px 90px;
+}
+
+section {
+  margin-bottom: 55px;
+  scroll-margin-top: 90px;
+}
+
+/* Hero */
+
+.hero {
+  padding: 45px 0 65px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 45px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-label {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 54px);
+  font-weight: 750;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.hero-role {
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.hero .muted {
+  font-size: 15px;
+}
+
+/* Academic profile links */
+
+.hero .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero .links a {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 15px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: white;
+}
+
+.hero .links a:hover {
+  background: var(--light);
+  border-color: #b8cce1;
+}
+
+/* Section headings */
+
+h2 {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Research interests */
+
+#research li {
+  margin-bottom: 17px;
+  padding-left: 5px;
+}
+
+/* Research project cards */
+
+.project {
+  background: var(--light);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin: 22px 0;
+}
+
+.project h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.project ul {
+  padding-left: 22px;
+}
+
+.project li {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.project > p:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+/* Publications */
+
+#publications h3 {
+  color: var(--accent);
+  font-size: 22px;
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+
+#publications .pub {
+  border-left: 3px solid #d6e2f0;
+  padding: 7px 0 9px 20px;
+  margin-bottom: 23px;
+}
+
+.pub .authors {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.pub .authors strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Education and Experience */
+
+.education-item {
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.education-header h3 {
+  font-size: 18px;
+}
+
+.education-header span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Footer */
+
+footer {
+  background: var(--light);
+  padding: 25px;
+  font-size: 13px;
+  border-top: 1px solid var(--line);
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+  nav {
+    position: static;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  main {
+    padding: 24px 20px 55px;
+  }
+
+  .hero {
+    padding: 30px 0 45px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .project {
+    padding: 20px;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .education-header span {
+    white-space: normal;
+  }
+}
+
   </style>
 </head>
 <body>
 
-  
 <nav>
   <a href="#about">About</a>
   <a href="#research">Research</a>
   <a href="#projects">Projects</a>
   <a href="#publications">Publications</a>
+  <a href="#experience">Experience</a>
   <a href="#education">Education</a>
   <a href="#service">Service</a>
   <a href="#contact">Contact</a>
 </nav>
 
   <main>
-    <header class="hero">
-      <img class="avatar"
-           src="assets/profile.jpg"
-           alt="Portrait of Your Name">
-      <div>
-        
-      <h1>Yanxin Xi</h1>
-      
-      <p>Doctoral Researcher</p>
-      
-      <p class="muted">
-        Department of Computer Science<br>
-        Faculty of Science<br>
-        University of Helsinki, Finland
-      </p>
-        
-<div class="links">
-  <a href="https://scholar.google.com/citations?user=SJshnpsAAAAJ"
-     target="_blank" rel="noopener noreferrer">
-    Google Scholar
-  </a>
+    
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-label">
+      ACADEMIC PERSONAL WEBSITE
+    </p>
 
-  <a href="https://orcid.org/0000-0003-4715-2186"
-     target="_blank" rel="noopener noreferrer">
-    ORCID
-  </a>
+    <h1>Yanxin Xi</h1>
 
-  <a href="https://github.com/axin1301"
-     target="_blank" rel="noopener noreferrer">
-    GitHub
-  </a>
+    <p class="hero-role">
+      Doctoral Researcher
+    </p>
 
-      </div>
-    </header>
+    <p class="muted">
+      Department of Computer Science<br>
+      Faculty of Science<br>
+      University of Helsinki, Finland
+    </p>
+
+    <div class="links">
+      <a href="https://scholar.google.com/citations?user=SJshnpsAAAAJ"
+         target="_blank" rel="noopener noreferrer">
+        Google Scholar
+      </a>
+
+      <a href="https://orcid.org/0000-0003-4715-2186"
+         target="_blank" rel="noopener noreferrer">
+        ORCID
+      </a>
+
+      <a href="https://github.com/axin1301"
+         target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
 
     
 <section id="about">
